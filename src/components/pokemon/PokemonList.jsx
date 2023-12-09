@@ -1,10 +1,10 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import axios from "axios";
 import PokemonCard from "./PokemonCard";
 
 export default class PokemonList extends Component {
 state = {
-    url: 'https://pokeapi.co/api/v2/pokemon/',
+    url: 'https://pokeapi.co/api/v2/pokemon/?limit=60',
     pokemon: null
 };
 
