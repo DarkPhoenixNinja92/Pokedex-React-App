@@ -1,4 +1,5 @@
 import { Component } from "react";
+import { Link } from "react-router-dom";
 import spinner from './spinner.gif';
 
 export default class PokemonCard extends Component {
@@ -11,8 +12,8 @@ export default class PokemonCard extends Component {
     };
 
     componentDidMount() {
-        const {name, url} = this.props;
-        const pokemonIndex = url.split('/')[url.split('/').length - 2];
+        const { name, url } = this.props;
+        const pokemonIndex = url.split('/')[6];
         const imageUrl = `https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/${pokemonIndex}.png?raw=true`;
 
         this.setState({name, imageUrl, pokemonIndex});
@@ -22,6 +23,7 @@ export default class PokemonCard extends Component {
 
     return (
         <div className="col-md-3 col-sm-6 mb-5">
+            <Link className="Link" to={`pokemon/${this.state.pokemonIndex}`}>
             <div className="card">
                     <h5 className="card-header">{this.state.pokemonIndex}</h5>
                     {this.state.imageLoading ? (
@@ -37,6 +39,7 @@ export default class PokemonCard extends Component {
                         ) : null}
                 </div>
             </div>
+            </Link>
         </div>
     )
   }

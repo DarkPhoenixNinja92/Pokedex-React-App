@@ -5,6 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d dist",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
@@ -12,8 +14,10 @@
   "dependencies": {
     "axios": "^1.6.2",
     "bootstrap": "^5.3.2",
+    "gh-pages": "^6.1.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "4.2.2"
   },
   "devDependencies": {
     "@types/react": "^18.2.37",

@@ -28,3 +28,15 @@
     -o-user-select: none;
     user-select: none;
 }
+
+.Link {
+  text-decoration: none;
+  color: black;
+  &:focus,
+  &:hover,
+  &:active,
+  &:visited,
+  &:link {
+    text-decoration: none;
+  }
+}
